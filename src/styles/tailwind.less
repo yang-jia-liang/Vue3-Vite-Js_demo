@@ -1,0 +1,15 @@
+@tailwind base;
+
+/* 解决 Preflight 带来的影响之一 —— 图像变成块级 */
+@layer base {
+  img, svg {
+    @apply tw-inline-block;
+  }
+
+  :disabled {
+    cursor: not-allowed;
+  }
+}
+
+@tailwind components;
+@tailwind utilities;
