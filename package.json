@@ -10,6 +10,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
     "commit": "git-cz",
+    "commitlint": "commitlint --config commitlint.config.js -e -V",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -40,7 +41,7 @@
     "eslint": "^8.57.0",
     "eslint-plugin-vue": "^9.23.0",
     "git-cz": "^4.9.0",
-    "husky": "^9.1.5",
+    "husky": "^8.0.0",
     "less": "^4.2.0",
     "lint-staged": "^15.2.10",
     "postcss": "^8.4.45",
@@ -51,12 +52,6 @@
     "unplugin-icons": "^0.19.3",
     "unplugin-vue-components": "^0.27.4",
     "vite": "^5.3.1"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
   },
   "lint-staged": {
     "**/*.+(js|jsx|ts|tsx|vue)": [
