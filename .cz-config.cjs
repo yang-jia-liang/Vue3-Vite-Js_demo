@@ -1,6 +1,6 @@
 module.exports = {
   types: [
-    { value: 'update',   name: 'update:   功能开发阶段性提交', description: '12333' },
+    { value: 'update',   name: 'update:   功能开发阶段性提交' },
     { value: 'feat',     name: 'feat:     完整新功能提交' },
     { value: 'fix',      name: 'fix:      修复Bug' },
     { value: 'perf',     name: 'perf:     性能优化（在不影响代码内部行为的前提下，对程序性能进行优化）' },
@@ -17,7 +17,6 @@ module.exports = {
   messages: {
     type: '选择一种你提交的类型(必选):',
     scope: '\n自定义更改范围(可选):',
-    customScope: '自定义更改范围(可选):',
     subject: '短说明(必填):\n',
     body: '长说明, 使用"|"换行(可选):\n',
     breaking: '列举非兼容性的重大变更(可选):\n',
@@ -26,7 +25,4 @@ module.exports = {
   },
 
   allowBreakingChanges: ['update', 'feat', 'fix'],
-
-  // subject 限制长度
-  subjectLimit: 100,
 };
