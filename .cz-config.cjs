@@ -1,6 +1,6 @@
 module.exports = {
   types: [
-    { value: 'update',   name: 'update:   功能开发阶段性提交' },
+    { value: 'update',   name: 'update:   功能开发阶段性提交', description: '12333' },
     { value: 'feat',     name: 'feat:     完整新功能提交' },
     { value: 'fix',      name: 'fix:      修复Bug' },
     { value: 'perf',     name: 'perf:     性能优化（在不影响代码内部行为的前提下，对程序性能进行优化）' },
