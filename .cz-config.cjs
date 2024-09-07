@@ -26,4 +26,7 @@ module.exports = {
   },
 
   allowBreakingChanges: ['update', 'feat', 'fix'],
+
+  // subject 限制长度
+  subjectLimit: 100,
 };
