@@ -57,11 +57,7 @@
       "prettier --write"
     ]
   },
-  "config": {
-    "commitizen": {
-      "path": "git-cz"
-    }
-  },
+
   "engines": {
     "node": "18.3.0"
   }
