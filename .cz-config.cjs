@@ -33,9 +33,9 @@ module.exports = {
   // allowCustomScopes: true,
   // allowEmptyScopes: true,
   //
-  // // 自定义 `scope` 提示文本
-  // customScopes: {
-  //   default: 'none1111', // 默认值
-  //   prompt: '请输入自定义范围3333:', // 自定义范围的提示
-  // },
+  // 自定义 `scope` 提示文本
+  customScopes: {
+    default: 'none1111', // 默认值
+    prompt: '请输入自定义范围3333:', // 自定义范围的提示
+  },
 };
