@@ -18,3 +18,9 @@ Vue 3 + Javascript + Vite + Pinia
 > - [Vite_v5](https://cn.vitejs.dev/config/)
 > - [VueRouter_v4](https://router.vuejs.org/zh/guide/)
 > - [Pinia](https://pinia.vuejs.org/zh/core-concepts/actions.html)
+
+# 换源
+
+npm cache clean --force
+npm config get registry
+npm config set registry https://registry.npmmirror.com

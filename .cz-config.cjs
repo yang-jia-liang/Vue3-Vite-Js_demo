@@ -12,7 +12,7 @@ module.exports = {
     { value: 'revert',   name: 'revert:   恢复上一次提交（e.g. 回滚feat: 增加用户注册功能）' },
   ],
 
-  scopes: ['custom'],
+  scopes: [],
 
   messages: {
     type: '选择一种你提交的类型(必选):',
@@ -27,15 +27,15 @@ module.exports = {
 
   allowBreakingChanges: ['update', 'feat', 'fix'],
 
-  skipQuestions: ['scope'],
-  defaultScope: '___CUSTOM___:',
+  // skipQuestions: ['scope'],
+  // defaultScope: '___CUSTOM___:',
 
-  allowCustomScopes: true,
-  allowEmptyScopes: true,
-
-  // 自定义 `scope` 提示文本
-  customScopes: {
-    default: 'none', // 默认值
-    prompt: '请输入自定义范围:', // 自定义范围的提示
-  },
+  // allowCustomScopes: true,
+  // allowEmptyScopes: true,
+  //
+  // // 自定义 `scope` 提示文本
+  // customScopes: {
+  //   default: 'none1111', // 默认值
+  //   prompt: '请输入自定义范围3333:', // 自定义范围的提示
+  // },
 };

@@ -37,7 +37,7 @@
     "autoprefixer": "^10.4.20",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
-    "cz-customizable": "^7.2.1",
+    "cz-customizable": "^6.3.0",
     "eslint": "^8.57.0",
     "eslint-plugin-vue": "^9.23.0",
     "git-cz": "^4.9.0",
