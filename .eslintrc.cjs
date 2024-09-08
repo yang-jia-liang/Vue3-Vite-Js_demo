@@ -16,9 +16,11 @@ module.exports = {
     'eslint:recommended',
     '@vue/eslint-config-prettier/skip-formatting'
   ],
+
   parserOptions: {
     ecmaVersion: 'latest'
   },
+
   rules: {
     // 生产环境禁用 console 和 debugger，并给出提示
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
