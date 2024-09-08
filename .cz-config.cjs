@@ -30,7 +30,7 @@ module.exports = {
   // skipQuestions: ['scope'],
   // defaultScope: '___CUSTOM___:',
 
-  // allowCustomScopes: true,
+  allowCustomScopes: true,
   // allowEmptyScopes: true,
   //
   // 自定义 `scope` 提示文本
