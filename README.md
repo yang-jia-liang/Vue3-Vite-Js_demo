@@ -5,8 +5,8 @@
 Vue 3 + Javascript + Vite + Pinia
 
 ## node版本
-- `nvm install 18.13.0 ` 
-- `nvm use 18.13.0 ` 
+- `nvm install 18.3.0 ` 
+- `nvm use 18.3.0 ` 
 
 ## 工具文档
 > - [VueUse（Vue组合实用函数）](https://vueuse.nodejs.cn/)

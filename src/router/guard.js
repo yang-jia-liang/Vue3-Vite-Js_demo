@@ -58,7 +58,7 @@ export default function (router) {
       }
       // 没有权限菜单，没有token，回登录
       else if (!userStore.permission.length && !tokenUtils.get()) {
-        return { name: 'Login' }
+        return { name: 'login' }
       }
     }
   })
