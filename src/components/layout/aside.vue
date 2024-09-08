@@ -6,7 +6,12 @@
       @open="handleOpen"
       @close="handleClose"
     >
-      <el-menu-item :index="item.path" v-for="item in asideList" @click="jumpPage(item.path)">
+      <el-menu-item
+        :index="item.path"
+        v-for="item in asideList"
+        :key="item.name"
+        @click="jumpPage(item.path)"
+      >
         <el-icon><ep-Menu /></el-icon>
         <template #title>{{ item.name }}</template>
       </el-menu-item>
@@ -19,9 +24,9 @@
 </template>
 
 <script setup>
-import { reactive, ref } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
-import { computed } from 'vue'
+  import { reactive, ref } from 'vue'
+  import { useRoute, useRouter } from 'vue-router'
+  import { computed } from 'vue'
 
   const route = useRoute()
   const router = useRouter()

@@ -21,9 +21,9 @@ export const useUserStore = defineStore('user', {
       this.permission = data
     },
 
-    initUser(data) {
+    initUser() {
       this.userInfo = {}
-      this.permission = [];
-    },
+      this.permission = []
+    }
   }
 })

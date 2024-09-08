@@ -28,7 +28,7 @@ export const cookieUtils = {
     const cookies = this.getAll()
 
     for (const key in cookies) {
-      if (cookies.hasOwnProperty(key)) {
+      if (Object.prototype.hasOwnProperty.call(cookies, key)) {
         this.remove(key)
       }
     }
@@ -45,12 +45,12 @@ export const tokenUtils = {
 
   set(token) {
     storageUtils.set('token', token)
-    cookieUtils.set('token', token);
+    cookieUtils.set('token', token)
   },
 
   clear() {
     storageUtils.remove('token')
-    cookieUtils.remove('token');
+    cookieUtils.remove('token')
   }
 }
 

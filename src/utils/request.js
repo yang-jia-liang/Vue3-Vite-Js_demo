@@ -3,7 +3,7 @@ import { ElMessage, ElLoading } from 'element-plus'
 import 'element-plus/theme-chalk/el-message.css'
 import 'element-plus/theme-chalk/el-loading.css'
 
-import { tokenUtils, dataUtils, cookieUtils } from '@/utils/common.js'
+import { tokenUtils, dataUtils } from '@/utils/common.js'
 
 const STATUS_SUCCESS = '0000' // 成功
 const STATUS_SESSION_EXPIRED = '1002' // 会话过期
