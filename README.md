@@ -17,4 +17,4 @@ Vue 3 + Javascript + Vite + Pinia
 > - [VueRouter_v4](https://router.vuejs.org/zh/guide/)
 > - [Pinia](https://pinia.vuejs.org/zh/core-concepts/actions.html)
 
-1
+12
