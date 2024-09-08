@@ -16,7 +16,7 @@ module.exports = {
 
   messages: {
     type: '选择一种你提交的类型(必选):',
-    // scope: '\n自定义更改范围(可选):',
+    scope: '\n自定义更改范围(可选):',
     subject: '短说明(必填):\n',
     body: '长说明, 使用"|"换行(可选):\n',
     breaking: '列举非兼容性的重大变更(可选):\n',
@@ -27,14 +27,4 @@ module.exports = {
   allowBreakingChanges: ['update', 'feat', 'fix'],
 
   skipQuestions: ['scope'],
-  // defaultScope: '___CUSTOM___:',
-
-  allowCustomScopes: true,
-  allowEmptyScopes: true,
-  //
-  // 自定义 `scope` 提示文本
-  customScopes: {
-    default: 'none1111', // 默认值
-    prompt: '请输入自定义范围3333:', // 自定义范围的提示
-  },
 };
