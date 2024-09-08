@@ -21,8 +21,7 @@ export default defineConfig({
 
     // elementPlus
     AutoImport({
-      resolvers: [ElementPlusResolver()],
-      dts: false // 避免 npm run dev，根目录自动生成 auto-imports.d.ts
+      resolvers: [ElementPlusResolver()]
     }),
     Components({
       resolvers: [
@@ -37,8 +36,7 @@ export default defineConfig({
 
           enabledCollections: ['ep'] // 指定启用的图标集合
         })
-      ],
-      dts: false // 避免 npm run dev，根目录自动生成 components.d.ts
+      ]
     }),
     Icons({
       autoInstall: true // 自动安装图标组件

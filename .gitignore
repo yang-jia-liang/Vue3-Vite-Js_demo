@@ -7,15 +7,15 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Node modules and build artifacts
 node_modules
-.DS_Store
 dist
-dist-ssr
-coverage
-*.local
 
-/cypress/videos/
-/cypress/screenshots/
+# macOS 系统自动生成的一个隐藏文件
+.DS_Store
+
+# 存放服务器端渲染SSR的构建输出文件
+dist-ssr
 
 # Editor directories and files
 .vscode/*
@@ -25,6 +25,16 @@ coverage
 *.ntvs*
 *.njsproj
 *.sln
+*.swp
+*.swx
 *.sw?
 
+# Temporary files
+*.local
+
+# TypeScript build artifacts
 *.tsbuildinfo
+
+# 自动导入插件，在项目启动时生成的文件，不需要提交
+./src/auto-imports.d.ts
+./src/components.d.ts

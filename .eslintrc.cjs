@@ -22,7 +22,7 @@ module.exports = {
   },
 
   rules: {
-    // 生产环境禁用 console 和 debugger，并给出提示
+    // 生产环境使用 console 和 debugger，会出现提示，warn 级别不影响构建
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
 

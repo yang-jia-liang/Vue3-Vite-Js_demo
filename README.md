@@ -5,10 +5,12 @@
 Vue 3 + Javascript + Vite + Pinia
 
 ## node版本
-- `nvm install 18.3.0 ` 
-- `nvm use 18.3.0 ` 
+
+- `nvm install 18.3.0 `
+- `nvm use 18.3.0 `
 
 ## 工具文档
+
 > - [VueUse（Vue组合实用函数）](https://vueuse.nodejs.cn/)
 > - [ElementPlus (组件库)](https://element-plus.org/zh-CN/)
 > - [tailwindcss（样式库）](https://www.tailwindcss.cn/docs/installation)
@@ -16,5 +18,3 @@ Vue 3 + Javascript + Vite + Pinia
 > - [Vite_v5](https://cn.vitejs.dev/config/)
 > - [VueRouter_v4](https://router.vuejs.org/zh/guide/)
 > - [Pinia](https://pinia.vuejs.org/zh/core-concepts/actions.html)
-
-123
