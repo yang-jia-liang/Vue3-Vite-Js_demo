@@ -12,7 +12,7 @@ module.exports = {
     { value: 'revert',   name: 'revert:   恢复上一次提交（e.g. 回滚feat: 增加用户注册功能）' },
   ],
 
-  scopes: [],
+  scopes: ['custom'],
 
   messages: {
     type: '选择一种你提交的类型(必选):',
