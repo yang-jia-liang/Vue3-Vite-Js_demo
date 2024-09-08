@@ -25,4 +25,10 @@ module.exports = {
   },
 
   allowBreakingChanges: ['update', 'feat', 'fix'],
+
+  // 自定义 `scope` 提示文本
+  customScopes: {
+    default: 'none', // 默认值
+    prompt: '请输入自定义范围:', // 自定义范围的提示
+  },
 };
