@@ -1,9 +1,3 @@
+<template>成绩导入</template>
 
-
-<template>
-成绩导入
-</template>
-
-<script setup>
-
-</script>
+<script setup></script>

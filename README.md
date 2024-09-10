@@ -6,8 +6,10 @@ Vue 3 + Javascript + Vite + Pinia
 
 ## node版本
 
-- `nvm install 18.3.0 `
-- `nvm use 18.3.0 `
+2024/09/10 最新的长期支持版本
+
+- `nvm install 20.17.0`
+- `nvm use 20.17.0`
 
 ## 工具文档
 

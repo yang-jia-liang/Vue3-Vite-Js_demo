@@ -5,7 +5,7 @@ export default [
     component: () => import('./scoreInquiry/index.vue'),
     meta: {
       title: '成绩查询'
-    },
+    }
   },
   {
     path: '/score_import',
@@ -13,6 +13,6 @@ export default [
     component: () => import('./scoreImport/index.vue'),
     meta: {
       title: '成绩导入'
-    },
+    }
   }
 ]
