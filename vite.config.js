@@ -15,6 +15,8 @@ import IconsResolver from 'unplugin-icons/resolver'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: './',
+
   plugins: [
     vue(),
     vueJsx(),
@@ -56,8 +58,6 @@ export default defineConfig({
   },
 
   build: {
-    target: 'esnext', // 支持顶级 await
-
     outDir: `dist/integrated_platform`, // 设置输出目录
 
     // 打包按资源类型分文件夹

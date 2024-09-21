@@ -10,7 +10,7 @@ const STATUS_SESSION_EXPIRED = '1002' // 会话过期
 const ERROR_DEFAULT_MSG = '请求失败'
 
 if (process.env.NODE_ENV === 'development') {
-  window.$ctx = 'http://192.168.2.51:4080/teapi/V1'
+  window.$ctx = 'http://192.168.2.51:4080'
 }
 
 const baseURL = window.$ctx
