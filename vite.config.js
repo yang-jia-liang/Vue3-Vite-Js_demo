@@ -58,7 +58,7 @@ export default defineConfig({
   },
 
   build: {
-    outDir: `dist/integrated_platform`, // 设置输出目录
+    outDir: `dist`, // 设置输出目录
 
     // 打包按资源类型分文件夹
     rollupOptions: {
