@@ -1,0 +1,1 @@
+import{_ as r,r as t,o as n,c as s,d as a,b as c,F as _}from"./index.DrRwhaLY.js";const d={};function l(m,e){const o=t("router-view");return n(),s(_,null,[e[0]||(e[0]=a(" 我的工作台 ")),c(o)],64)}const i=r(d,[["render",l]]);export{i as default};
