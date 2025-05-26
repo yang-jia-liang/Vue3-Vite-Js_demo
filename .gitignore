@@ -35,6 +35,6 @@ dist-ssr
 # TypeScript build artifacts
 *.tsbuildinfo
 
-# 自动导入插件，在项目启动时生成的文件，不需要提交
-./src/auto-imports.d.ts
-./src/components.d.ts
+# 忽略自动生成的类型文件
+auto-imports.d.ts
+components.d.ts

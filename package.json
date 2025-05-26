@@ -11,7 +11,8 @@
     "format": "prettier --write src/",
     "commit": "git-cz",
     "commitlint": "commitlint --config commitlint.config.cjs -e -V",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",
