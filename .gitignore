@@ -1,0 +1,40 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Node modules and build artifacts
+node_modules
+dist
+
+# macOS 系统自动生成的一个隐藏文件
+.DS_Store
+
+# 存放服务器端渲染SSR的构建输出文件
+dist-ssr
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*.swx
+*.sw?
+
+# Temporary files
+*.local
+
+# TypeScript build artifacts
+*.tsbuildinfo
+
+# 忽略自动生成的类型文件
+auto-imports.d.ts
+components.d.ts
