@@ -1,0 +1,58 @@
+name: 部署项目到服务器
+
+on:
+  push:
+    branches:
+      - main  # 监听 main 分支的 push 事件
+
+jobs:
+  build-and-deploy:
+    # 执行该作业的虚拟机环境
+    # 常用 ubuntu-latest，环境体积小、启动快
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 拉取代码
+        uses: actions/checkout@v3
+
+      - name: 安装 Node.js
+        uses: volta-cli/action@v4
+        with:
+          node-version: 'package.json'  # 自动读取 package.json 中的 volta.node
+
+      - name: 验证版本，必要时增加 npm 版本锁定
+        run: |
+            node -v
+            npm -v
+
+      - name: 缓存 npm 依赖，重复构建时加速
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+
+      - name: 安装依赖
+        run: npm ci
+
+      - name: 打包项目
+        run: npm run build
+
+      - name: 部署
+        uses: easingthemes/ssh-deploy@v2.1.5
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          ARGS: "-avz --delete"
+          SOURCE: "dist/"  # Vue项目构建后的输出目录
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          TARGET: ${{ secrets.REMOTE_TARGET }}  # 服务器上的部署目录
+
+      - name: Restart application
+        uses: appleboy/ssh-action@v0.1.8
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd ${{ secrets.REMOTE_TARGET }}
+            pm2 restart all || pm2 start server.js  # 根据实际情况修改启动命令

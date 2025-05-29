@@ -67,9 +67,6 @@
       "prettier --write"
     ]
   },
-  "engines": {
-    "node": "20.17.0"
-  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-customizable"
@@ -77,5 +74,8 @@
     "cz-customizable": {
       "config": ".cz-config.cjs"
     }
+  },
+  "volta": {
+    "node": "20.17.0"
   }
 }
