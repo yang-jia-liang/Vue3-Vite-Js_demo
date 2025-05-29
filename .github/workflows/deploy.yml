@@ -25,34 +25,60 @@ jobs:
             node -v
             npm -v
 
-      - name: 缓存 npm 依赖，重复构建时加速
+      - name: 缓存 npm 依赖 # 重复构建时加速
         uses: actions/cache@v3
         with:
-          path: node_modules
+          path: |
+            node_modules
+            ~/.npm
           key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
 
       - name: 安装依赖
         run: npm ci
 
+
       - name: 打包项目
         run: npm run build
-
-      - name: 部署
-        uses: easingthemes/ssh-deploy@v2.1.5
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          ARGS: "-avz --delete"
-          SOURCE: "dist/"  # Vue项目构建后的输出目录
-          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-          REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          TARGET: ${{ secrets.REMOTE_TARGET }}  # 服务器上的部署目录
+          NODE_ENV: production
 
-      - name: Restart application
-        uses: appleboy/ssh-action@v0.1.8
+      - name: 检查打包结果
+        run: |
+            if [ ! -d "dist" ]; then
+              echo "打包失败：dist 目录不存在"
+              exit 1
+            fi  
+
+      - name: 推送到服务器
+        uses: easingthemes/ssh-deploy@v2.1.5
+        with:
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+          # -a：包含所有子目录和文件
+          # -v：显示每个文件的传输进度和状态，在 GitHub Actions 日志中查看哪些文件被同步、跳过或删除
+          # -z：传输前压缩文件，目标端自动解压
+          # --delete：目标目录和打包目录完全一致，有多余的文件会删除掉
+          args: "-avz --delete"
+          source: "dist/"
+          remote_host: ${{ secrets.REMOTE_HOST }}
+          remote_user: ${{ secrets.REMOTE_USER }}
+          remote_port: ${{ secrets.REMOTE_PORT || 22 }}  # 默认端口 22
+          target: ${{ secrets.REMOTE_TARGET }}
+
+
+      - name: 验证部署
+        uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.REMOTE_PORT || 22 }}
+
+          # 确认可进入部署目录
+          # 查看文件列表和修改时间
           script: |
-            cd ${{ secrets.REMOTE_TARGET }}
-            pm2 restart all || pm2 start server.js  # 根据实际情况修改启动命令
+            cd ${{ secrets.REMOTE_TARGET }} 
+            echo "部署成功：$(date)"
+            ls -la
