@@ -5,7 +5,14 @@ import { ElMessage } from 'element-plus'
 import 'element-plus/theme-chalk/el-message.css'
 
 export default function (router) {
-  const whiteList = ['/login'] // 允许未登录访问
+  const whiteList = [
+    '/login',
+    '/home',
+    '/score_query',
+    '/score_import',
+    '/campus_application',
+    '/supervision_list'
+  ] // 允许未登录访问
 
   const userStore = useUserStore()
 
