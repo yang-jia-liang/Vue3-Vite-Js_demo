@@ -60,7 +60,7 @@ jobs:
           # -v：显示每个文件的传输进度和状态，在 GitHub Actions 日志中查看哪些文件被同步、跳过或删除
           # -z：传输前压缩文件，目标端自动解压
           # --delete：目标目录和打包目录完全一致，有多余的文件会删除掉
-          args: "-avz --delete"
+          args: "-avz --delete --exclude=.user.ini"  # 添加排除 .user.ini 文件的参数"
           source: "dist/"
           remote_host: ${{ secrets.REMOTE_HOST }}
           remote_user: ${{ secrets.REMOTE_USER }}
