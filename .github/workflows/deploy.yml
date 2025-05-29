@@ -18,7 +18,7 @@ jobs:
       - name: 安装 Node.js
         uses: volta-cli/action@v4
         with:
-          node-version: 'package.json'  # 自动读取 package.json 中的 volta.node
+          node-version: '20.17.0' # 指定具体版本
 
       - name: 验证版本，必要时增加 npm 版本锁定
         run: |
